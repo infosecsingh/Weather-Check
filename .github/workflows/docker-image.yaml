@@ -20,7 +20,10 @@ jobs:
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v2 # 2 Step - ensures that the runner has Docker Buildx installed and ready to use for building your Docker images with advanced features.
-       
+      - name: Check Secrets (Debug)
+        run: |
+          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
+
       - name: Login in Docker Hub 
         uses: docker/login-action@v2
         with:
