@@ -1,5 +1,5 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.9-slim
+FROM python:3.9-slim AS base
 
 # Set the working directory in the container
 WORKDIR /app
@@ -13,5 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Command to run the application
-CMD ["python", "app.py"]
+CMD [ "python", "app.py" ]
 
